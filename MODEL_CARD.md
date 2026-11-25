@@ -1,6 +1,6 @@
 # 模型交付事实与能力边界
 
-本仓库提供 `final_pitch/` 与 `final_analyzer/`，各包含 `weights.pt`、ONNX 和 `metadata.json`。模型文件与原始交付逐字节一致，校验值见 `SHA256SUMS`。
+本仓库提供 `final_pitch/` 与 `final_analyzer/`，各包含 `weights.pt`、ONNX 和 `metadata.json`。模型文件与原始交付逐字节一致。
 
 两个模型都从 48 kHz 单声道 float32 波形预测，以 480 样本为 hop，每 10 ms 一帧；ONNX opset 为 18。119 维主观测中 117 维存在训练标签，两条颤音维度没有可靠训练标签。
 
