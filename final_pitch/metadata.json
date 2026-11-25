@@ -1,0 +1,935 @@
+{
+  "format": "chaosinger.pitch.export.v1",
+  "opset": 18,
+  "network": {
+    "variant": "full",
+    "width": 192,
+    "dilations": [
+      1,
+      2,
+      4,
+      8,
+      1,
+      2,
+      4,
+      8
+    ],
+    "bin_cents": 20,
+    "min_hz": 50.0,
+    "max_hz": 1200.0
+  },
+  "context_frames": 60,
+  "masking_revision": 2,
+  "audio": {
+    "sample_rate": 48000,
+    "hop_samples": 480,
+    "fft_size": 2048,
+    "frame_count": "floor(N/480)+1",
+    "frame_origin": "center_at_sample_0",
+    "chunk_context_samples_per_side": 29824,
+    "boundary_policy": "zero_waveform_padding_and_mask_after_layer_norm_and_each_temporal_block"
+  },
+  "inputs": {
+    "waveform": {
+      "dtype": "float32",
+      "shape": [
+        "B",
+        "N"
+      ]
+    },
+    "sample_lengths": {
+      "dtype": "int64",
+      "shape": [
+        "B"
+      ]
+    }
+  },
+  "outputs": {
+    "class_logits": {
+      "shape": [
+        "B",
+        "T",
+        277
+      ],
+      "dtype": "float32"
+    },
+    "voicing_logit": {
+      "shape": [
+        "B",
+        "T"
+      ],
+      "dtype": "float32"
+    },
+    "log2_f0_hz": {
+      "shape": [
+        "B",
+        "T"
+      ],
+      "dtype": "float32"
+    },
+    "f0_hz": {
+      "shape": [
+        "B",
+        "T"
+      ],
+      "dtype": "float32"
+    },
+    "voicing_probability": {
+      "shape": [
+        "B",
+        "T"
+      ],
+      "dtype": "float32"
+    },
+    "local_probability_mass": {
+      "shape": [
+        "B",
+        "T"
+      ],
+      "dtype": "float32"
+    },
+    "frame_times_s": {
+      "shape": [
+        "T"
+      ],
+      "dtype": "float64"
+    },
+    "valid_frames": {
+      "shape": [
+        "B",
+        "T"
+      ],
+      "dtype": "bool"
+    }
+  },
+  "observation_semantics": "F0_acoustic_auxiliary_observation_not_named_vocal_control_or_direct_sensor_measurement",
+  "local_probability_mass": {
+    "meaning": "classification_probability_mass_within_argmax_plus_minus_2_bins",
+    "statistically_calibrated": false,
+    "physiological_confidence": false
+  },
+  "voicing_probability": {
+    "statistically_calibrated": false,
+    "meaning": "sigmoid_of_independent_voicing_logit"
+  },
+  "f0": {
+    "units": [
+      "log2(Hz)",
+      "Hz"
+    ],
+    "decode": "local_softmax_argmax_plus_minus_2_bins",
+    "masked_by_predicted_voicing": false,
+    "invalid_padding": "NaN",
+    "named_control": false
+  },
+  "provenance": {
+    "empirical_convergence_passed": true,
+    "convergence_evidence": "matching_run_complete_receipt",
+    "selected_checkpoint_step": 8000,
+    "completed_training_steps": 21000,
+    "index_sha256": "50aee475f2cd69ba6cf7de6083447f5befb4060f3fa99ec97b1aac7bec97af3c",
+    "best_validation_mae_cents": 25.61698948129462,
+    "quality_accepted": false,
+    "named_control": false,
+    "checkpoint_sha256": "efb94c7ffe8a47b77440f67f3e1e0643dd55a6c8ab60e06b3e886dde297451ad"
+  },
+  "quality_accepted": false,
+  "validation": {
+    "status": "passed",
+    "onnx_checker": true,
+    "onnxruntime_version": "1.30.0",
+    "provider": "CPUExecutionProvider",
+    "rtol": 0.0003,
+    "atol": 0.0003,
+    "cases": [
+      {
+        "batch": 1,
+        "samples": 1,
+        "sample_lengths": [
+          1
+        ],
+        "fft_vs_dft": {
+          "class_logits": 0.0,
+          "voicing_logit": 0.0,
+          "log2_f0_hz": 0.0,
+          "f0_hz": 0.0,
+          "voicing_probability": 0.0,
+          "local_probability_mass": 0.0,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "pytorch_vs_ort": {
+          "class_logits": 6.67572021484375e-06,
+          "voicing_logit": 3.5762786865234375e-06,
+          "log2_f0_hz": 0.0,
+          "f0_hz": 0.0,
+          "voicing_probability": 2.980232238769531e-07,
+          "local_probability_mass": 1.6093254089355469e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "batch_vs_single": [
+          {
+            "ort": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "batch": 2,
+        "samples": 17,
+        "sample_lengths": [
+          17,
+          1
+        ],
+        "fft_vs_dft": {
+          "class_logits": 8.58306884765625e-06,
+          "voicing_logit": 3.2782554626464844e-07,
+          "log2_f0_hz": 9.5367431640625e-07,
+          "f0_hz": 0.00042724609375,
+          "voicing_probability": 8.940696716308594e-08,
+          "local_probability_mass": 0.0,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "pytorch_vs_ort": {
+          "class_logits": 1.0371208190917969e-05,
+          "voicing_logit": 6.9141387939453125e-06,
+          "log2_f0_hz": 9.5367431640625e-07,
+          "f0_hz": 0.00018310546875,
+          "voicing_probability": 8.791685104370117e-07,
+          "local_probability_mass": 1.0132789611816406e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "batch_vs_single": [
+          {
+            "ort": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 9.059906005859375e-06,
+              "voicing_logit": 4.559755325317383e-06,
+              "log2_f0_hz": 9.5367431640625e-07,
+              "f0_hz": 0.00042724609375,
+              "voicing_probability": 1.1324882507324219e-06,
+              "local_probability_mass": 8.344650268554688e-07,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          },
+          {
+            "ort": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 9.5367431640625e-06,
+              "voicing_logit": 1.0013580322265625e-05,
+              "log2_f0_hz": 1.9073486328125e-06,
+              "f0_hz": 0.000396728515625,
+              "voicing_probability": 1.2218952178955078e-06,
+              "local_probability_mass": 5.364418029785156e-07,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "batch": 3,
+        "samples": 479,
+        "sample_lengths": [
+          479,
+          222,
+          142
+        ],
+        "fft_vs_dft": {
+          "class_logits": 7.62939453125e-06,
+          "voicing_logit": 4.887580871582031e-06,
+          "log2_f0_hz": 1.9073486328125e-06,
+          "f0_hz": 0.00079345703125,
+          "voicing_probability": 5.364418029785156e-07,
+          "local_probability_mass": 8.940696716308594e-07,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "pytorch_vs_ort": {
+          "class_logits": 1.1920928955078125e-05,
+          "voicing_logit": 8.702278137207031e-06,
+          "log2_f0_hz": 9.5367431640625e-07,
+          "f0_hz": 0.0003662109375,
+          "voicing_probability": 2.175569534301758e-06,
+          "local_probability_mass": 1.8477439880371094e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "batch_vs_single": [
+          {
+            "ort": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 5.245208740234375e-06,
+              "voicing_logit": 3.933906555175781e-06,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 4.172325134277344e-07,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          },
+          {
+            "ort": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 7.152557373046875e-06,
+              "voicing_logit": 3.4570693969726562e-06,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 8.642673492431641e-07,
+              "local_probability_mass": 8.642673492431641e-07,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          },
+          {
+            "ort": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 5.7220458984375e-06,
+              "voicing_logit": 1.9073486328125e-06,
+              "log2_f0_hz": 9.5367431640625e-07,
+              "f0_hz": 0.0003662109375,
+              "voicing_probability": 3.725290298461914e-08,
+              "local_probability_mass": 5.960464477539062e-07,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "batch": 2,
+        "samples": 480,
+        "sample_lengths": [
+          480,
+          223
+        ],
+        "fft_vs_dft": {
+          "class_logits": 1.0251998901367188e-05,
+          "voicing_logit": 2.384185791015625e-06,
+          "log2_f0_hz": 9.5367431640625e-07,
+          "f0_hz": 0.0001068115234375,
+          "voicing_probability": 2.384185791015625e-07,
+          "local_probability_mass": 1.5497207641601562e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "pytorch_vs_ort": {
+          "class_logits": 1.0013580322265625e-05,
+          "voicing_logit": 5.796551704406738e-06,
+          "log2_f0_hz": 4.76837158203125e-07,
+          "f0_hz": 6.103515625e-05,
+          "voicing_probability": 1.4901161193847656e-06,
+          "local_probability_mass": 1.0728836059570312e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "batch_vs_single": [
+          {
+            "ort": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 1.2874603271484375e-05,
+              "voicing_logit": 4.179775714874268e-06,
+              "log2_f0_hz": 4.76837158203125e-07,
+              "f0_hz": 6.103515625e-05,
+              "voicing_probability": 1.0728836059570312e-06,
+              "local_probability_mass": 2.086162567138672e-06,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          },
+          {
+            "ort": {
+              "class_logits": 7.3909759521484375e-06,
+              "voicing_logit": 2.5033950805664062e-06,
+              "log2_f0_hz": 4.76837158203125e-07,
+              "f0_hz": 6.103515625e-05,
+              "voicing_probability": 3.5762786865234375e-07,
+              "local_probability_mass": 8.940696716308594e-07,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 5.7220458984375e-06,
+              "voicing_logit": 3.5762786865234375e-06,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 5.960464477539062e-07,
+              "local_probability_mass": 9.238719940185547e-07,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "batch": 2,
+        "samples": 481,
+        "sample_lengths": [
+          481,
+          223
+        ],
+        "fft_vs_dft": {
+          "class_logits": 7.62939453125e-06,
+          "voicing_logit": 4.5299530029296875e-06,
+          "log2_f0_hz": 9.5367431640625e-07,
+          "f0_hz": 0.0006103515625,
+          "voicing_probability": 4.172325134277344e-07,
+          "local_probability_mass": 5.066394805908203e-07,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "pytorch_vs_ort": {
+          "class_logits": 1.2636184692382812e-05,
+          "voicing_logit": 2.86102294921875e-06,
+          "log2_f0_hz": 9.5367431640625e-07,
+          "f0_hz": 0.00042724609375,
+          "voicing_probability": 4.470348358154297e-07,
+          "local_probability_mass": 6.854534149169922e-07,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "batch_vs_single": [
+          {
+            "ort": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 1.1563301086425781e-05,
+              "voicing_logit": 6.9141387939453125e-06,
+              "log2_f0_hz": 1.9073486328125e-06,
+              "f0_hz": 0.00079345703125,
+              "voicing_probability": 8.791685104370117e-07,
+              "local_probability_mass": 7.748603820800781e-07,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          },
+          {
+            "ort": {
+              "class_logits": 5.7220458984375e-06,
+              "voicing_logit": 1.6689300537109375e-06,
+              "log2_f0_hz": 9.5367431640625e-07,
+              "f0_hz": 0.0006103515625,
+              "voicing_probability": 2.384185791015625e-07,
+              "local_probability_mass": 6.258487701416016e-07,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 4.827976226806641e-06,
+              "voicing_logit": 2.1457672119140625e-06,
+              "log2_f0_hz": 9.5367431640625e-07,
+              "f0_hz": 0.0006103515625,
+              "voicing_probability": 3.5762786865234375e-07,
+              "local_probability_mass": 2.682209014892578e-07,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "batch": 2,
+        "samples": 2047,
+        "sample_lengths": [
+          2047,
+          1006
+        ],
+        "fft_vs_dft": {
+          "class_logits": 1.2636184692382812e-05,
+          "voicing_logit": 1.5735626220703125e-05,
+          "log2_f0_hz": 1.9073486328125e-06,
+          "f0_hz": 0.000732421875,
+          "voicing_probability": 3.585591912269592e-08,
+          "local_probability_mass": 1.2814998626708984e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "pytorch_vs_ort": {
+          "class_logits": 1.049041748046875e-05,
+          "voicing_logit": 8.106231689453125e-06,
+          "log2_f0_hz": 1.9073486328125e-06,
+          "f0_hz": 0.000732421875,
+          "voicing_probability": 5.960464477539063e-08,
+          "local_probability_mass": 7.301568984985352e-07,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "batch_vs_single": [
+          {
+            "ort": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 1.064687967300415e-05,
+              "voicing_logit": 1.3828277587890625e-05,
+              "log2_f0_hz": 2.86102294921875e-06,
+              "f0_hz": 0.00115966796875,
+              "voicing_probability": 1.0244548320770264e-08,
+              "local_probability_mass": 9.08970832824707e-07,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          },
+          {
+            "ort": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 7.748603820800781e-06,
+              "voicing_logit": 3.814697265625e-06,
+              "log2_f0_hz": 4.76837158203125e-07,
+              "f0_hz": 6.103515625e-05,
+              "voicing_probability": 1.7229467630386353e-08,
+              "local_probability_mass": 2.60770320892334e-07,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "batch": 2,
+        "samples": 2185,
+        "sample_lengths": [
+          2185,
+          1075
+        ],
+        "fft_vs_dft": {
+          "class_logits": 1.5735626220703125e-05,
+          "voicing_logit": 7.62939453125e-06,
+          "log2_f0_hz": 9.5367431640625e-07,
+          "f0_hz": 0.000213623046875,
+          "voicing_probability": 5.662441253662109e-07,
+          "local_probability_mass": 1.8775463104248047e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "pytorch_vs_ort": {
+          "class_logits": 1.1205673217773438e-05,
+          "voicing_logit": 7.152557373046875e-06,
+          "log2_f0_hz": 9.5367431640625e-07,
+          "f0_hz": 0.00054931640625,
+          "voicing_probability": 2.086162567138672e-07,
+          "local_probability_mass": 1.4007091522216797e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "batch_vs_single": [
+          {
+            "ort": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 1.049041748046875e-05,
+              "voicing_logit": 1.0013580322265625e-05,
+              "log2_f0_hz": 9.5367431640625e-07,
+              "f0_hz": 9.1552734375e-05,
+              "voicing_probability": 8.940696716308594e-08,
+              "local_probability_mass": 1.043081283569336e-06,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          },
+          {
+            "ort": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 4.76837158203125e-07,
+              "f0_hz": 6.103515625e-05,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 1.239776611328125e-05,
+              "voicing_logit": 7.3909759521484375e-06,
+              "log2_f0_hz": 9.5367431640625e-07,
+              "f0_hz": 0.0006103515625,
+              "voicing_probability": 5.811452865600586e-07,
+              "local_probability_mass": 1.4007091522216797e-06,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "batch": 1,
+        "samples": 48000,
+        "sample_lengths": [
+          48000
+        ],
+        "fft_vs_dft": {
+          "class_logits": 1.0520219802856445e-05,
+          "voicing_logit": 1.52587890625e-05,
+          "log2_f0_hz": 2.86102294921875e-06,
+          "f0_hz": 0.00177001953125,
+          "voicing_probability": 3.390014171600342e-07,
+          "local_probability_mass": 1.5497207641601562e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "pytorch_vs_ort": {
+          "class_logits": 1.1324882507324219e-05,
+          "voicing_logit": 1.33514404296875e-05,
+          "log2_f0_hz": 2.384185791015625e-06,
+          "f0_hz": 0.00067138671875,
+          "voicing_probability": 2.4586915969848633e-07,
+          "local_probability_mass": 1.4901161193847656e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "batch_vs_single": [
+          {
+            "ort": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          }
+        ],
+        "ort_whole_vs_chunk": {
+          "class_logits": 4.76837158203125e-06,
+          "voicing_logit": 7.62939453125e-06,
+          "log2_f0_hz": 1.9073486328125e-06,
+          "f0_hz": 0.00079345703125,
+          "voicing_probability": 1.1920928955078125e-07,
+          "local_probability_mass": 7.152557373046875e-07,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "torch_whole_vs_chunk": {
+          "class_logits": 0.0,
+          "voicing_logit": 9.5367431640625e-07,
+          "log2_f0_hz": 0.0,
+          "f0_hz": 0.0,
+          "voicing_probability": 3.725290298461914e-09,
+          "local_probability_mass": 0.0,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        }
+      },
+      {
+        "batch": 3,
+        "samples": 48137,
+        "sample_lengths": [
+          48137,
+          24051,
+          16028
+        ],
+        "fft_vs_dft": {
+          "class_logits": 1.3589859008789062e-05,
+          "voicing_logit": 1.621246337890625e-05,
+          "log2_f0_hz": 1.9073486328125e-06,
+          "f0_hz": 0.0010986328125,
+          "voicing_probability": 3.2782554626464844e-06,
+          "local_probability_mass": 1.7881393432617188e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "pytorch_vs_ort": {
+          "class_logits": 1.615285873413086e-05,
+          "voicing_logit": 1.33514404296875e-05,
+          "log2_f0_hz": 2.86102294921875e-06,
+          "f0_hz": 0.001220703125,
+          "voicing_probability": 1.0728836059570312e-06,
+          "local_probability_mass": 1.7285346984863281e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "batch_vs_single": [
+          {
+            "ort": {
+              "class_logits": 5.245208740234375e-06,
+              "voicing_logit": 5.7220458984375e-06,
+              "log2_f0_hz": 2.86102294921875e-06,
+              "f0_hz": 0.001220703125,
+              "voicing_probability": 1.4901161193847656e-07,
+              "local_probability_mass": 6.556510925292969e-07,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 8.106231689453125e-06,
+              "voicing_logit": 9.5367431640625e-06,
+              "log2_f0_hz": 1.430511474609375e-06,
+              "f0_hz": 0.0006103515625,
+              "voicing_probability": 1.2814998626708984e-06,
+              "local_probability_mass": 1.3113021850585938e-06,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          },
+          {
+            "ort": {
+              "class_logits": 7.867813110351562e-06,
+              "voicing_logit": 8.58306884765625e-06,
+              "log2_f0_hz": 2.86102294921875e-06,
+              "f0_hz": 0.00140380859375,
+              "voicing_probability": 1.1920928955078125e-06,
+              "local_probability_mass": 1.519918441772461e-06,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 7.152557373046875e-06,
+              "voicing_logit": 8.58306884765625e-06,
+              "log2_f0_hz": 1.9073486328125e-06,
+              "f0_hz": 0.00048828125,
+              "voicing_probability": 8.642673492431641e-07,
+              "local_probability_mass": 9.5367431640625e-07,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          },
+          {
+            "ort": {
+              "class_logits": 8.344650268554688e-06,
+              "voicing_logit": 9.059906005859375e-06,
+              "log2_f0_hz": 1.9073486328125e-06,
+              "f0_hz": 0.00079345703125,
+              "voicing_probability": 8.940696716308594e-08,
+              "local_probability_mass": 1.0728836059570312e-06,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 1.4185905456542969e-05,
+              "voicing_logit": 1.2636184692382812e-05,
+              "log2_f0_hz": 1.430511474609375e-06,
+              "f0_hz": 0.0002593994140625,
+              "voicing_probability": 9.760260581970215e-07,
+              "local_probability_mass": 1.2516975402832031e-06,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          }
+        ],
+        "ort_whole_vs_chunk": {
+          "class_logits": 4.291534423828125e-06,
+          "voicing_logit": 5.7220458984375e-06,
+          "log2_f0_hz": 1.430511474609375e-06,
+          "f0_hz": 0.0003662109375,
+          "voicing_probability": 3.8743019104003906e-07,
+          "local_probability_mass": 9.834766387939453e-07,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "torch_whole_vs_chunk": {
+          "class_logits": 0.0,
+          "voicing_logit": 9.5367431640625e-07,
+          "log2_f0_hz": 0.0,
+          "f0_hz": 0.0,
+          "voicing_probability": 2.2351741790771484e-08,
+          "local_probability_mass": 0.0,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        }
+      },
+      {
+        "batch": 1,
+        "samples": 144137,
+        "sample_lengths": [
+          144137
+        ],
+        "fft_vs_dft": {
+          "class_logits": 1.1444091796875e-05,
+          "voicing_logit": 1.430511474609375e-05,
+          "log2_f0_hz": 1.9073486328125e-06,
+          "f0_hz": 0.00115966796875,
+          "voicing_probability": 8.642673492431641e-07,
+          "local_probability_mass": 3.1888484954833984e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "pytorch_vs_ort": {
+          "class_logits": 1.52587890625e-05,
+          "voicing_logit": 1.4781951904296875e-05,
+          "log2_f0_hz": 1.9073486328125e-06,
+          "f0_hz": 0.00079345703125,
+          "voicing_probability": 2.1457672119140625e-06,
+          "local_probability_mass": 2.8312206268310547e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "batch_vs_single": [
+          {
+            "ort": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            },
+            "pytorch": {
+              "class_logits": 0.0,
+              "voicing_logit": 0.0,
+              "log2_f0_hz": 0.0,
+              "f0_hz": 0.0,
+              "voicing_probability": 0.0,
+              "local_probability_mass": 0.0,
+              "frame_times_s": 0.0,
+              "valid_frames": 0.0
+            }
+          }
+        ],
+        "ort_whole_vs_chunk": {
+          "class_logits": 6.198883056640625e-06,
+          "voicing_logit": 7.62939453125e-06,
+          "log2_f0_hz": 1.9073486328125e-06,
+          "f0_hz": 0.00079345703125,
+          "voicing_probability": 2.980232238769531e-07,
+          "local_probability_mass": 1.5497207641601562e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        },
+        "torch_whole_vs_chunk": {
+          "class_logits": 8.106231689453125e-06,
+          "voicing_logit": 6.67572021484375e-06,
+          "log2_f0_hz": 2.384185791015625e-06,
+          "f0_hz": 0.00054931640625,
+          "voicing_probability": 3.5762786865234375e-07,
+          "local_probability_mass": 1.3709068298339844e-06,
+          "frame_times_s": 0.0,
+          "valid_frames": 0.0
+        }
+      }
+    ],
+    "scope": "numerical_deployment_only_not_pitch_accuracy_or_control_acceptance"
+  },
+  "files": {
+    "weights.pt": {
+      "sha256": "516151d9c5120350778b57abe9957182ce902b8aff355f253627a1d5c3bd54c6",
+      "bytes": 3943691
+    },
+    "pitch.onnx": {
+      "sha256": "157062dc62c706a04a86742df9fe631e384c11a9ed64c66b0ce1ceb0029fb06a",
+      "bytes": 21554755
+    }
+  }
+}

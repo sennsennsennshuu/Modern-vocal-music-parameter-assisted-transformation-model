@@ -1,0 +1,551 @@
+{
+  "checked_date": "2026-11-25",
+  "note": "来源声明与模型权重再分发/商业许可不是同一结论；KEELE 与 APLAWD 存在明确未决事项。",
+  "datasets": [
+    {
+      "dataset": "SVD",
+      "records": 9565,
+      "reported_terms": "CC BY 4.0",
+      "used_subset": "healthy.zip；健康语音/元音子集",
+      "checked_date": "2026-11-25",
+      "source_url": "https://zenodo.org/records/16874898",
+      "metadata_url": "https://zenodo.org/api/records/16874898",
+      "source_title": "Saarbruecken Voice Database",
+      "source_creators": [
+        {
+          "name": "Pützer, Manfred",
+          "affiliation": "Former Institute of Phonetics, Saarland University"
+        },
+        {
+          "name": "Barry, William J.",
+          "affiliation": "Former Institute of Phonetics, Saarland University"
+        }
+      ],
+      "source_license_metadata": {
+        "id": "cc-by-4.0"
+      },
+      "doi": "10.5281/zenodo.16874898",
+      "evidence_level": "download_source_record"
+    },
+    {
+      "dataset": "Singing_EGG_Supplement",
+      "records": 266,
+      "reported_terms": "CC BY 4.0",
+      "used_subset": "Gesangsstimme / Sängerstimme；元音与朗读，非歌唱语料",
+      "checked_date": "2026-11-25",
+      "source_url": "https://zenodo.org/records/16874898",
+      "metadata_url": "https://zenodo.org/api/records/16874898",
+      "source_title": "Saarbruecken Voice Database",
+      "source_creators": [
+        {
+          "name": "Pützer, Manfred",
+          "affiliation": "Former Institute of Phonetics, Saarland University"
+        },
+        {
+          "name": "Barry, William J.",
+          "affiliation": "Former Institute of Phonetics, Saarland University"
+        }
+      ],
+      "source_license_metadata": {
+        "id": "cc-by-4.0"
+      },
+      "doi": "10.5281/zenodo.16874898",
+      "evidence_level": "download_source_record"
+    },
+    {
+      "dataset": "CMU_Arctic_EGG",
+      "records": 3377,
+      "reported_terms": "CMU 原始 COPYING（宽松自定义条款）",
+      "used_subset": "bdl / jmk / slt 三名发音人",
+      "checked_date": "2026-11-25",
+      "source_url": "http://www.festvox.org/cmu_arctic/",
+      "copying_urls": [
+        "http://festvox.org/cmu_arctic/cmu_arctic/cmu_us_bdl_arctic/COPYING",
+        "http://festvox.org/cmu_arctic/cmu_arctic/cmu_us_jmk_arctic/COPYING",
+        "http://festvox.org/cmu_arctic/cmu_arctic/cmu_us_slt_arctic/COPYING"
+      ],
+      "evidence_level": "official_COPYING"
+    },
+    {
+      "dataset": "PTDB_TUG",
+      "records": 4718,
+      "reported_terms": "ODbL 1.0（数据库）＋ DbCL 1.0（单项内容）",
+      "used_subset": "官方同步 MIC / LAR",
+      "checked_date": "2026-11-25",
+      "source_url": "https://www.spsc.tugraz.at/databases-and-tools/ptdb-tug-pitch-tracking-database-from-graz-university-of-technology.html",
+      "evidence_level": "official_license_statement",
+      "terms_urls": [
+        "https://opendatacommons.org/licenses/odbl/1.0/",
+        "https://opendatacommons.org/licenses/dbcl/1.0/"
+      ]
+    },
+    {
+      "dataset": "KEELE",
+      "records": 10,
+      "reported_terms": "分发记录：other-nc；非商业用途",
+      "used_subset": "原始许可全文未取得；不能称为标准 CC 许可",
+      "checked_date": "2026-11-25",
+      "source_url": "https://zenodo.org/records/3920591",
+      "metadata_url": "https://zenodo.org/api/records/3920591",
+      "source_title": "Speech and Noise Corpora for Pitch Estimation of Human Speech",
+      "source_creators": [
+        {
+          "name": "Bastian Bechtold",
+          "affiliation": "Jade Hochschule",
+          "orcid": "0000-0002-6224-2502"
+        }
+      ],
+      "source_license_metadata": {
+        "id": "other-nc"
+      },
+      "doi": "10.5281/zenodo.3920591",
+      "evidence_level": "distributor_record_only"
+    },
+    {
+      "dataset": "APLAWD",
+      "records": 10979,
+      "reported_terms": "未确认明确的授权条款",
+      "used_subset": "原始包说明文件未声明许可；公开下载不等于开放授权",
+      "checked_date": "2026-11-25",
+      "source_url": "https://www.commsp.ee.ic.ac.uk/~sap/uploads/data/aplawdw.zip",
+      "evidence_level": "unresolved_no_explicit_license_found",
+      "archive_notice": "APLAWDW/doc/aplawdw.txt"
+    },
+    {
+      "dataset": "Tuvan_Throat_Singing_tMRI",
+      "records": 3,
+      "reported_terms": "CC0 1.0",
+      "used_subset": "MRIaudio / MRImoviesC；一名歌者三段呼麦",
+      "checked_date": "2026-11-25",
+      "source_url": "https://zenodo.org/records/4966580",
+      "metadata_url": "https://zenodo.org/api/records/4966580",
+      "source_title": "Overtone focusing in biphonic Tuvan throat singing",
+      "source_creators": [
+        {
+          "name": "Bergevin, Christopher",
+          "affiliation": "York University",
+          "orcid": "0000-0002-4529-399X"
+        }
+      ],
+      "source_license_metadata": {
+        "id": "cc-zero"
+      },
+      "doi": "10.5061/dryad.cvdncjt14",
+      "evidence_level": "download_source_record"
+    },
+    {
+      "dataset": "Vocal_Pitch_Resonance_tMRI",
+      "records": 16,
+      "reported_terms": "CC0 1.0",
+      "used_subset": "实际为口哨研究；filtered_audio / video",
+      "checked_date": "2026-11-25",
+      "source_url": "https://zenodo.org/records/5026872",
+      "metadata_url": "https://zenodo.org/api/records/5026872",
+      "source_title": "Data from: Whistling shares a common tongue with speech: bioacoustics from real-time MRI of the human vocal tract",
+      "source_creators": [
+        {
+          "name": "Belyk, Michel",
+          "affiliation": ","
+        },
+        {
+          "name": "Shultz, Benjamin",
+          "affiliation": ","
+        },
+        {
+          "name": "Correia, Joao",
+          "affiliation": ","
+        },
+        {
+          "name": "Beal, Deryk",
+          "affiliation": ","
+        },
+        {
+          "name": "Kotz, Sonja",
+          "affiliation": ","
+        }
+      ],
+      "source_license_metadata": {
+        "id": "cc-zero"
+      },
+      "doi": "10.5061/dryad.kb56cd1",
+      "evidence_level": "download_source_record"
+    },
+    {
+      "dataset": "USC_TIMIT_tMRI",
+      "records": 851,
+      "reported_terms": "CC BY 4.0",
+      "used_subset": "10名发音人的 MRI 语音",
+      "checked_date": "2026-11-25",
+      "source_url": "https://zenodo.org/records/19422914",
+      "metadata_url": "https://zenodo.org/api/records/19422914",
+      "source_title": "USC-TIMIT: Real-time magnetic resonance imaging and electromagnetic articulography database for speech production research (TC)",
+      "source_creators": [
+        {
+          "name": "Narayanan, Shrikanth",
+          "affiliation": "University of Southern California",
+          "orcid": "0000-0002-1052-6204"
+        },
+        {
+          "name": "Toutios, Asterios",
+          "affiliation": null,
+          "orcid": "0000-0003-3193-2241"
+        },
+        {
+          "name": "Ramanarayanan, Vikram",
+          "affiliation": null,
+          "orcid": "0000-0001-7810-2769"
+        },
+        {
+          "name": "Lammert, Adam",
+          "affiliation": "Lincoln Laboratory, Massachusetts Institute of Technology",
+          "orcid": "0000-0002-5986-1986"
+        },
+        {
+          "name": "Kim, Jangwon",
+          "affiliation": "Amazon (United States)",
+          "orcid": "0000-0002-6197-1113"
+        },
+        {
+          "name": "Lee, Sungbok",
+          "affiliation": null
+        },
+        {
+          "name": "Nayak, Krishna",
+          "affiliation": null
+        },
+        {
+          "name": "Kim, Yoon-chul",
+          "affiliation": null
+        },
+        {
+          "name": "Yinghua, Zhu",
+          "affiliation": null
+        },
+        {
+          "name": "Goldstein, Louis",
+          "affiliation": null
+        },
+        {
+          "name": "Byrd, Dani",
+          "affiliation": null
+        },
+        {
+          "name": "Bresch, Erik",
+          "affiliation": null
+        },
+        {
+          "name": "Ghosh, Prasanta",
+          "affiliation": null
+        },
+        {
+          "name": "Katsamanis, Athanasios",
+          "affiliation": null
+        },
+        {
+          "name": "Proctor, Michael",
+          "affiliation": null
+        }
+      ],
+      "source_license_metadata": {
+        "id": "cc-by-4.0"
+      },
+      "doi": "10.1121/1.4890284",
+      "evidence_level": "download_source_record"
+    },
+    {
+      "dataset": "Connacht_Palatalization_UTI",
+      "records": 735,
+      "reported_terms": "CC BY 4.0",
+      "used_subset": "爱尔兰语 Connacht 子集",
+      "checked_date": "2026-11-25",
+      "source_url": "https://zenodo.org/records/4934835",
+      "metadata_url": "https://zenodo.org/api/records/4934835",
+      "source_title": "Ultrasound Investigation of Irish Palatalization (Phase 1, Connacht dialect)",
+      "source_creators": [
+        {
+          "name": "Bennett, Ryan",
+          "affiliation": null
+        },
+        {
+          "name": "McGuire, Grant",
+          "affiliation": null
+        },
+        {
+          "name": "Ní Chiosáin, Máire",
+          "affiliation": null
+        },
+        {
+          "name": "Padgett, Jaye",
+          "affiliation": null
+        }
+      ],
+      "source_license_metadata": {
+        "id": "cc-by-4.0"
+      },
+      "doi": "10.7291/D1WC74",
+      "evidence_level": "download_source_record"
+    },
+    {
+      "dataset": "Ultraspeech_UTI",
+      "records": 1108,
+      "reported_terms": "CC BY 4.0",
+      "used_subset": "仅 PB 一名发音人子集",
+      "checked_date": "2026-11-25",
+      "source_url": "https://zenodo.org/records/1194786",
+      "metadata_url": "https://zenodo.org/api/records/1194786",
+      "source_title": "UltraspeechDataset2017",
+      "source_creators": [
+        {
+          "name": "Hueber, Thomas",
+          "affiliation": "Univ. Grenoble Alpes, CNRS, Grenoble-INP, GIPSA-lab, 38000 Grenoble, France",
+          "orcid": "0000-0002-8296-5177"
+        },
+        {
+          "name": "Fabre, Diandra",
+          "affiliation": "Univ. Grenoble Alpes, CNRS, Grenoble-INP, GIPSA-lab, 38000 Grenoble, France"
+        },
+        {
+          "name": "Badin, Pierre",
+          "affiliation": "Univ. Grenoble Alpes, CNRS, Grenoble-INP, GIPSA-lab, 38000 Grenoble, France"
+        },
+        {
+          "name": "Girin, Laurent",
+          "affiliation": "Univ. Grenoble Alpes, CNRS, Grenoble-INP, GIPSA-lab, 38000 Grenoble, France"
+        },
+        {
+          "name": "Alameda-Pineda, Xavier",
+          "affiliation": "INRIA, Perception Team, Montbonnot, France"
+        }
+      ],
+      "source_license_metadata": {
+        "id": "cc-by-4.0"
+      },
+      "doi": "10.5281/zenodo.1194786",
+      "evidence_level": "download_source_record"
+    },
+    {
+      "dataset": "SAIT_EMA_Mandarin",
+      "records": 1924,
+      "reported_terms": "CC BY 4.0",
+      "used_subset": "仅 A_F001 / A_M001 两人子集",
+      "checked_date": "2026-11-25",
+      "source_url": "https://zenodo.org/records/17506802",
+      "metadata_url": "https://zenodo.org/api/records/17506802",
+      "source_title": "SAIT-EMA: A Tridimensional Electromagnetic Articulography Database for Mandarin with Diverse Language Backgrounds",
+      "source_creators": [
+        {
+          "name": "Jia, Hui",
+          "affiliation": "Beijing Language and Culture University",
+          "orcid": "0009-0006-7221-2813"
+        }
+      ],
+      "source_license_metadata": {
+        "id": "cc-by-4.0"
+      },
+      "doi": "10.5281/zenodo.17506802",
+      "evidence_level": "download_source_record"
+    },
+    {
+      "dataset": "BY2014_EMA",
+      "records": 672,
+      "reported_terms": "CC BY-SA 4.0",
+      "used_subset": "单发音人 EMA 子集",
+      "checked_date": "2026-11-25",
+      "source_url": "https://zenodo.org/records/154083",
+      "metadata_url": "https://zenodo.org/api/records/154083",
+      "source_title": "BY2014 articulatory-acoustic dataset",
+      "source_creators": [
+        {
+          "name": "Bocquelet, Florent",
+          "affiliation": "INSERM and Univ Grenoble Alpes"
+        },
+        {
+          "name": "Hueber, Thomas",
+          "affiliation": "CNRS and Univ Grenoble Alpes"
+        },
+        {
+          "name": "Girin, Laurent",
+          "affiliation": "CNRS and Univ Grenoble Alpes"
+        },
+        {
+          "name": "Savariaux, Christophe",
+          "affiliation": "CNRS and Univ Grenoble Alpes"
+        },
+        {
+          "name": "Yvert, Blaise",
+          "affiliation": "INSERM and Univ Grenoble Alpes"
+        }
+      ],
+      "source_license_metadata": {
+        "id": "cc-by-sa-4.0"
+      },
+      "doi": "10.5281/zenodo.154083",
+      "evidence_level": "download_source_record"
+    },
+    {
+      "dataset": "EMA_5EMO_Expressive",
+      "records": 953,
+      "reported_terms": "CC BY 4.0",
+      "used_subset": "三名发音人的情绪语音子集",
+      "checked_date": "2026-11-25",
+      "source_url": "https://zenodo.org/records/19303746",
+      "metadata_url": "https://zenodo.org/api/records/19303746",
+      "source_title": "An articulatory study of emotional speech production",
+      "source_creators": [
+        {
+          "name": "Lee, Sungbok",
+          "affiliation": "University of Southern California"
+        },
+        {
+          "name": "Yildirim, Serdar",
+          "affiliation": "University of Southern California"
+        },
+        {
+          "name": "Kazemzadeh, Abe",
+          "affiliation": "University of Southern California"
+        },
+        {
+          "name": "Narayanan, Shrikanth",
+          "affiliation": "University of Southern California"
+        }
+      ],
+      "source_license_metadata": {
+        "id": "cc-by-4.0"
+      },
+      "doi": "10.21437/Interspeech.2005-325",
+      "evidence_level": "download_source_record"
+    },
+    {
+      "dataset": "USC_TIMIT_EMA",
+      "records": 368,
+      "reported_terms": "CC BY 4.0",
+      "used_subset": "四名发音人 EMA 子集；与 MRI 不冒称同步配对",
+      "checked_date": "2026-11-25",
+      "source_url": "https://zenodo.org/records/19422914",
+      "metadata_url": "https://zenodo.org/api/records/19422914",
+      "source_title": "USC-TIMIT: Real-time magnetic resonance imaging and electromagnetic articulography database for speech production research (TC)",
+      "source_creators": [
+        {
+          "name": "Narayanan, Shrikanth",
+          "affiliation": "University of Southern California",
+          "orcid": "0000-0002-1052-6204"
+        },
+        {
+          "name": "Toutios, Asterios",
+          "affiliation": null,
+          "orcid": "0000-0003-3193-2241"
+        },
+        {
+          "name": "Ramanarayanan, Vikram",
+          "affiliation": null,
+          "orcid": "0000-0001-7810-2769"
+        },
+        {
+          "name": "Lammert, Adam",
+          "affiliation": "Lincoln Laboratory, Massachusetts Institute of Technology",
+          "orcid": "0000-0002-5986-1986"
+        },
+        {
+          "name": "Kim, Jangwon",
+          "affiliation": "Amazon (United States)",
+          "orcid": "0000-0002-6197-1113"
+        },
+        {
+          "name": "Lee, Sungbok",
+          "affiliation": null
+        },
+        {
+          "name": "Nayak, Krishna",
+          "affiliation": null
+        },
+        {
+          "name": "Kim, Yoon-chul",
+          "affiliation": null
+        },
+        {
+          "name": "Yinghua, Zhu",
+          "affiliation": null
+        },
+        {
+          "name": "Goldstein, Louis",
+          "affiliation": null
+        },
+        {
+          "name": "Byrd, Dani",
+          "affiliation": null
+        },
+        {
+          "name": "Bresch, Erik",
+          "affiliation": null
+        },
+        {
+          "name": "Ghosh, Prasanta",
+          "affiliation": null
+        },
+        {
+          "name": "Katsamanis, Athanasios",
+          "affiliation": null
+        },
+        {
+          "name": "Proctor, Michael",
+          "affiliation": null
+        }
+      ],
+      "source_license_metadata": {
+        "id": "cc-by-4.0"
+      },
+      "doi": "10.1121/1.4890284",
+      "evidence_level": "download_source_record"
+    }
+  ],
+  "license_texts": [
+    {
+      "path": "licenses/texts/CC0-1.0.txt",
+      "source_url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "path": "licenses/texts/CC-BY-4.0.txt",
+      "source_url": "https://creativecommons.org/licenses/by/4.0/legalcode.txt",
+      "bytes": 18657,
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "path": "licenses/texts/CC-BY-SA-4.0.txt",
+      "source_url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt",
+      "bytes": 20138,
+      "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+    },
+    {
+      "path": "licenses/texts/ODbL-1.0.txt",
+      "source_url": "https://opendatacommons.org/licenses/odbl/odbl-10.txt",
+      "bytes": 25278,
+      "sha256": "607680718977f6f6c9607972afd98f208573f19251315ed1362a8589b51beaf5"
+    },
+    {
+      "path": "licenses/texts/DbCL-1.0.txt",
+      "source_url": "https://opendatacommons.org/licenses/dbcl/dbcl-10.txt",
+      "bytes": 2374,
+      "sha256": "3cbfa990f26df856c6a7d3fff3d1f236e3b0165b1e8257ca0d00f15758754f81"
+    },
+    {
+      "path": "licenses/texts/CMU-ARCTIC-bdl-COPYING.txt",
+      "source_url": "http://festvox.org/cmu_arctic/cmu_arctic/cmu_us_bdl_arctic/COPYING",
+      "bytes": 2285,
+      "sha256": "469adc0262e10d84fb9658fa6181c883586415b5692f6bfbc2fde65dfc63f5c5"
+    },
+    {
+      "path": "licenses/texts/CMU-ARCTIC-jmk-COPYING.txt",
+      "source_url": "http://festvox.org/cmu_arctic/cmu_arctic/cmu_us_jmk_arctic/COPYING",
+      "bytes": 2285,
+      "sha256": "469adc0262e10d84fb9658fa6181c883586415b5692f6bfbc2fde65dfc63f5c5"
+    },
+    {
+      "path": "licenses/texts/CMU-ARCTIC-slt-COPYING.txt",
+      "source_url": "http://festvox.org/cmu_arctic/cmu_arctic/cmu_us_slt_arctic/COPYING",
+      "bytes": 2285,
+      "sha256": "469adc0262e10d84fb9658fa6181c883586415b5692f6bfbc2fde65dfc63f5c5"
+    }
+  ]
+}
