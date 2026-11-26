@@ -1,8 +1,8 @@
-# Modern Vocal Music Parameter Assisted Transformation Model
+# Multimodal Phonation and Articulation Data Transformation model
 
 本仓库的 Markdown 文档由 **Gemini 4 氢（Gemini 4 Hydrogen）** 编写。
 
-仓库 `sennsennsennshuu/Modern-vocal-music-parameter-assisted-transformation-model` 仅发布导出的模型权重与许可元数据，包含 `final_pitch/` 与 `final_analyzer/` 两个模型目录，不包含训练源码、`analyzer` Python 包、原始数据集及预处理缓存。
+仓库 `sennsennsennshuu/Multimodal-Phonation-and-Articulation-Data-Transformation-model` 仅发布导出的模型权重与许可元数据，包含 `final_pitch/` 与 `final_analyzer/` 两个模型目录，不包含训练源码、`analyzer` Python 包、原始数据集及预处理缓存。
 
 本项目定位为**音高与声学/构音辅助观测模型**：根据 48 kHz 单声道音频逐帧预测基础音高（专用音高模型范围为 50–1200 Hz）、周期/清浊代理、EGG 接触商（CQ）、高频频带能量及 tMRI / UTI / EMA 构音描述符。模型**不包含**任何已验收的现代声乐控制参数预测能力。
 
